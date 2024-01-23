@@ -2,6 +2,7 @@ package net.kaijane.too_many_apples;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.kaijane.too_many_apples.item.Apples;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +17,8 @@ public class TooManyApples implements ModInitializer {
 	public void onInitialize() {
 
 		LOGGER.info("Too Many Apples is initializing!");
+
+		Apples.registerApples();
 
 	}
 }
