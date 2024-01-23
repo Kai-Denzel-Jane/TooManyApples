@@ -4,6 +4,27 @@
 
   "item.too_many_apples.copper_apple": "Copper Apple",
 
-  "item.too_many_apples.diamond_apple": "Diamond Apple"
+  "item.too_many_apples.diamond_apple": "Diamond Apple",
+
+  "item.too_many_apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
+
+  "item.too_many_apples.enchanted_golden_apple_stage_1": "Enchanted Golden Apple Stage 1",
+
+  "item.too_many_apples.enchanted_golden_apple_stage_2": "Enchanted Golden Apple Stage 2",
+
+  "item.too_many_apples.enchanted_diamond_apple_stage_1": "Enchanted Diamond Apple Stage 1",
+
+  "item.too_many_apples.enchanted_diamond_apple_stage_2": "Enchanted Diamond Apple Stage 2",
+
+  "tooltip.too_many_apples.hold_shift": "Hold shift",
+
+  "tooltip.too_many_apples.enchanted_golden_apple_stage_1": "You cant eat this apple however you can use it to craft an Enchanted Golden Apple Stage 2",
+
+  "tooltip.too_many_apples.enchanted_golden_apple_stage_2": "You cant eat this apple however you can use it to craft an Enchanted Golden Apple",
+
+  "tooltip.too_many_apples.enchanted_diamond_apple_stage_1": "You cant eat this apple however you can use it to craft an Enchanted Diamond Apple Stage 2",
+
+  "tooltip.too_many_apples.enchanted_diamond_apple_stage_2": "You cant eat this apple however you can use it to craft an Enchanted Diamond Apple"
+
 
 }

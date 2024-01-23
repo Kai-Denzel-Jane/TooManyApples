@@ -23,8 +23,14 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         for (Item value : Apples.APPLES.values()) {
 
-            // Generate a handheld model for each FoodComponent
-            itemModelGenerator.register(value, Models.HANDHELD);
+            if (value.equals(Apples.ENCHANTED_DIAMOND_APPLE)) {
+                itemModelGenerator.register(value, Apples.DIAMOND_APPLE, Models.HANDHELD);
+
+            }
+
+            else {
+                itemModelGenerator.register(value, Models.HANDHELD);
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kaijane.too_many_apples.item.Apples;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 
@@ -17,78 +18,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        // Define the recipes for each apple type
+        createAppleRecipe(exporter, Apples.IRON_APPLE, Items.IRON_INGOT, Items.APPLE);
+        createAppleRecipe(exporter, Apples.COPPER_APPLE, Items.COPPER_BLOCK, Items.APPLE);
+        createAppleRecipe(exporter, Apples.DIAMOND_APPLE, Items.DIAMOND, Items.APPLE);
+        createAppleRecipe(exporter, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1, Items.GOLD_BLOCK, Items.GOLDEN_APPLE);
+        createAppleRecipe(exporter, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2, Items.GOLD_BLOCK, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1);
+        createAppleRecipe(exporter, Items.ENCHANTED_GOLDEN_APPLE, Items.GOLD_BLOCK, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2);
+        createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_1, Items.DIAMOND_BLOCK, Apples.DIAMOND_APPLE);
+        createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_2, Items.DIAMOND_BLOCK, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_1);
+        createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE, Items.DIAMOND_BLOCK, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_2);
+    }
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Apples.IRON_APPLE)
-                .pattern("III")
-                .pattern("IAI")
-                .pattern("III")
-                .input('I', Items.IRON_INGOT)
-                .input('A', Items.APPLE)
-                .criterion(FabricRecipeProvider.hasItem(Items.APPLE),
-                        FabricRecipeProvider.conditionsFromItem(Items.APPLE))
-                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+    // Helper method to create a recipe for an apple type
+    private void createAppleRecipe(Consumer<RecipeJsonProvider> exporter, Item output, Item ingredient1, Item ingredient2) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, output)
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .input('A', ingredient1)
+                .input('B', ingredient2)
+                .criterion(FabricRecipeProvider.hasItem(ingredient1), FabricRecipeProvider.conditionsFromItem(ingredient1))
+                .criterion(FabricRecipeProvider.hasItem(ingredient2), FabricRecipeProvider.conditionsFromItem(ingredient2))
                 .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Apples.COPPER_APPLE)
-                .pattern("CCC")
-                .pattern("CAC")
-                .pattern("CCC")
-                .input('C', Items.COPPER_INGOT)
-                .input('A', Items.APPLE)
-                .criterion(FabricRecipeProvider.hasItem(Items.APPLE),
-                        FabricRecipeProvider.conditionsFromItem(Items.APPLE))
-                .criterion(FabricRecipeProvider.hasItem(Items.COPPER_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Apples.DIAMOND_APPLE)
-                .pattern("DDD")
-                .pattern("DAD")
-                .pattern("DDD")
-                .input('D', Items.DIAMOND)
-                .input('A', Items.APPLE)
-                .criterion(FabricRecipeProvider.hasItem(Items.APPLE),
-                        FabricRecipeProvider.conditionsFromItem(Items.APPLE))
-                .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND),
-                        FabricRecipeProvider.conditionsFromItem(Items.DIAMOND))
-                .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1)
-                .pattern("GGG")
-                .pattern("GAG")
-                .pattern("GGG")
-                .input('G', Items.GOLD_BLOCK)
-                .input('A', Items.GOLDEN_APPLE)
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_BLOCK),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_BLOCK))
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLDEN_APPLE),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLDEN_APPLE))
-                .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2)
-                .pattern("GGG")
-                .pattern("GAG")
-                .pattern("GGG")
-                .input('G', Items.GOLD_BLOCK)
-                .input('A', Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1)
-                .criterion(FabricRecipeProvider.hasItem(Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1),
-                        FabricRecipeProvider.conditionsFromItem(Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1))
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_BLOCK),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_BLOCK))
-                .offerTo(exporter);
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, Items.ENCHANTED_GOLDEN_APPLE)
-                .pattern("GGG")
-                .pattern("GAG")
-                .pattern("GGG")
-                .input('G', Items.GOLD_BLOCK)
-                .input('A', Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2)
-                .criterion(FabricRecipeProvider.hasItem(Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2),
-                        FabricRecipeProvider.conditionsFromItem(Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2))
-                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_BLOCK),
-                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_BLOCK))
-                .offerTo(exporter);
-
     }
 }
