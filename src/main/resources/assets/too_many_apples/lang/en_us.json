@@ -24,7 +24,7 @@
 
   "tooltip.too_many_apples.enchanted_diamond_apple_stage_1": "You cant eat this apple however you can use it to craft an Enchanted Diamond Apple Stage 2",
 
-  "tooltip.too_many_apples.enchanted_diamond_apple_stage_2": "You cant eat this apple however you can use it to craft an Enchanted Diamond Apple"
+  "tooltip.too_many_apples.enchanted_diamond_apple_stage_2": "You cant eat this apple however you can use it to craft an Enchanted Diamond Apple",
 
-
+  "itemgroup.too_many_apples": "Too Many Apples"
 }
