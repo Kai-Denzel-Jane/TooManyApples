@@ -24,6 +24,9 @@ public class Apples {
 
     public static final Map<String, Item> APPLES = new HashMap<>();
 
+    public static final Item COAL_APPLE = registerItem("coal_apple",
+            new Item(new Item.Settings().food(ModFoodComponents.COAL_APPLE)));
+
     public static final Item IRON_APPLE = registerItem("iron_apple",
             new Item(new Item.Settings().food(ModFoodComponents.IRON_APPLE)));
 
@@ -48,7 +51,7 @@ public class Apples {
                 public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("tooltip.too_many_apples.enchanted_golden_apple_stage_1"));
+                        tooltip.add(Text.translatable("tooltip.too_many_apples.apple_stages"));
                     } else {
                         tooltip.add(Text.translatable("tooltip.too_many_apples.hold_shift"));
                     }
@@ -63,7 +66,7 @@ public class Apples {
                 public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("tooltip.too_many_apples.enchanted_golden_apple_stage_2"));
+                        tooltip.add(Text.translatable("tooltip.too_many_apples.apple_stages"));
                     } else {
                         tooltip.add(Text.translatable("tooltip.too_many_apples.hold_shift"));
                     }
@@ -81,7 +84,7 @@ public class Apples {
                 public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("tooltip.too_many_apples.enchanted_diamond_apple_stage_1"));
+                        tooltip.add(Text.translatable("tooltip.too_many_apples.apple_stages"));
                     } else {
                         tooltip.add(Text.translatable("tooltip.too_many_apples.hold_shift"));
                     }
@@ -97,7 +100,7 @@ public class Apples {
                 public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
                     if (Screen.hasShiftDown()) {
-                        tooltip.add(Text.translatable("tooltip.too_many_apples.enchanted_diamond_apple_stage_2"));
+                        tooltip.add(Text.translatable("tooltip.too_many_apples.apple_stages"));
                     } else {
                         tooltip.add(Text.translatable("tooltip.too_many_apples.hold_shift"));
                     }
@@ -111,6 +114,7 @@ public class Apples {
         APPLES.put("iron_apple", Apples.IRON_APPLE);
         APPLES.put("copper_apple", Apples.COPPER_APPLE);
         APPLES.put("diamond_apple", Apples.DIAMOND_APPLE);
+        APPLES.put("coal_apple", Apples.COAL_APPLE);
         APPLES.put("enchanted_diamond_apple", Apples.ENCHANTED_DIAMOND_APPLE);
         APPLES.put("enchanted_golden_apple_stage_1", Apples.ENCHANTED_GOLDEN_APPLE_STAGE_1);
         APPLES.put("enchanted_golden_apple_stage_2", Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2);

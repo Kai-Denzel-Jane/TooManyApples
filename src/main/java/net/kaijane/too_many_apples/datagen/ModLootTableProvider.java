@@ -11,7 +11,6 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.TableBonusLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
-import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
@@ -22,7 +21,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
 
-        addDrop(Blocks.OAK_LEAVES, (Block block) -> this.oakLeavesDrops((Block)block, Blocks.OAK_SAPLING, SAPLING_DROP_CHANCE));
+        addDrop(Blocks.OAK_LEAVES, (Block block) -> this.oakLeavesDrops(block, Blocks.OAK_SAPLING, SAPLING_DROP_CHANCE));
 
 
     }
@@ -34,7 +33,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                         .rolls(ConstantLootNumberProvider.
                                 create(1.0f))
                         .conditionally(WITHOUT_SILK_TOUCH_NOR_SHEARS)
-                        .with((LootPoolEntry.Builder<?>)((LeafEntry.Builder)this
+                        .with(((LeafEntry.Builder<?>)this
                                 .addSurvivesExplosionCondition(leaves, ItemEntry
                                         .builder(Items.APPLE)))
                                 .conditionally(TableBonusLootCondition
