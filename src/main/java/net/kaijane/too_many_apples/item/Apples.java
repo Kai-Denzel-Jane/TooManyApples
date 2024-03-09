@@ -39,6 +39,9 @@ public class Apples {
     public static final Item ENCHANTED_DIAMOND_APPLE = registerItem("enchanted_diamond_apple",
             new GlintItem(new Item.Settings().food(ModFoodComponents.ENCHANTED_DIAMOND_APPLE)));
 
+    public static final Item ENCHANTED_NETHERITE_APPLE = registerItem("enchanted_netherite_apple",
+            new GlintItem(new Item.Settings().food(ModFoodComponents.ENCHANTED_NETHERITE_APPLE)));
+
 
     // Enchanted apple stages
 
@@ -120,6 +123,7 @@ public class Apples {
         APPLES.put("enchanted_golden_apple_stage_2", Apples.ENCHANTED_GOLDEN_APPLE_STAGE_2);
         APPLES.put("enchanted_diamond_apple_stage_1", Apples.ENCHANTED_DIAMOND_APPLE_STAGE_1);
         APPLES.put("enchanted_diamond_apple_stage_2", Apples.ENCHANTED_DIAMOND_APPLE_STAGE_2);
+        APPLES.put("enchanted_netherite_apple", Apples.ENCHANTED_NETHERITE_APPLE);
     }
 
     // Item register methods

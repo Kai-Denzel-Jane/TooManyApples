@@ -28,6 +28,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_1, Items.DIAMOND_BLOCK, Apples.DIAMOND_APPLE);
         createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_2, Items.DIAMOND_BLOCK, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_1);
         createAppleRecipe(exporter, Apples.ENCHANTED_DIAMOND_APPLE, Items.DIAMOND_BLOCK, Apples.ENCHANTED_DIAMOND_APPLE_STAGE_2);
+        createAppleRecipe(exporter, Apples.ENCHANTED_NETHERITE_APPLE, Items.NETHERITE_BLOCK, Apples.ENCHANTED_DIAMOND_APPLE);
+        createAppleRecipe(exporter, Apples.COAL_APPLE, Items.COAL_BLOCK, Items.APPLE);
     }
 
     // Helper method to create a recipe for an apple type
