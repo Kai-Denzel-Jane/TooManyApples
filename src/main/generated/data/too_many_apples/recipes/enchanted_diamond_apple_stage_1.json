@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:diamond_block"
+    },
+    "B": {
+      "item": "too_many_apples:diamond_apple"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "too_many_apples:enchanted_diamond_apple_stage_1"
+  },
+  "show_notification": true
+}

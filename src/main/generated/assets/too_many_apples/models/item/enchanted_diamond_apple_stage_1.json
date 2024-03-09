@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "too_many_apples:item/enchanted_diamond_apple_stage_1"
+  }
+}
