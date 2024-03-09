@@ -24,12 +24,12 @@ public class ModModelProvider extends FabricModelProvider {
         for (Item value : Apples.APPLES.values()) {
 
             if (value.equals(Apples.ENCHANTED_DIAMOND_APPLE)) {
-                itemModelGenerator.register(value, Apples.DIAMOND_APPLE, Models.HANDHELD);
+                itemModelGenerator.register(value, Apples.DIAMOND_APPLE, Models.GENERATED);
 
             }
 
             else {
-                itemModelGenerator.register(value, Models.HANDHELD);
+                itemModelGenerator.register(value, Models.GENERATED);
             }
         }
     }
