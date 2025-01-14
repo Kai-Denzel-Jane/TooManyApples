@@ -8,7 +8,7 @@
 
   "item.too_many_apples.diamond_apple": "Diamond Apple",
 
-  "item.too_many.apples.netherite_apple": "Netherite Apple",
+  "item.too_many_apples.enchanted_netherite_apple": "Enchanted Netherite Apple",
 
   "item.too_many_apples.enchanted_diamond_apple": "Enchanted Diamond Apple",
 
@@ -20,9 +20,9 @@
 
   "item.too_many_apples.enchanted_diamond_apple_stage_2": "Enchanted Diamond Apple Stage 2",
 
-  "tooltip.too_many_apples.hold_shift": "Hold shift",
+  "tooltip.too_many_apples.hold_shift": "§bHold Shift",
 
- "tooltip.too_many_apples.apple_stages": "You cant eat this apple",
+  "tooltip.too_many_apples.apple_stages": "You cant eat this apple",
 
   "itemgroup.too_many_apples": "Too Many Apples"
 }
